@@ -1,16 +1,19 @@
 # lights_out
 
-A new Flutter project.
+MultiState Lights Out Game with Linear Algebra based Solver Integrated
 
-## Getting Started
+## Check Out
 
-This project is a starting point for a Flutter application.
+Detailed Project Report
+[SLP_ReportFinal.pdf](https://github.com/gauravvjhaa/LightsOutMobileApp/files/15299719/SLP_ReportFinal.pdf)
 
-A few resources to get you started if this is your first Flutter project:
+Link to Android APK (application still in development mode, your feedback will be appreciated)
+https://drive.google.com/file/d/1oRSq101-SXhbbnw2Wf9uBIAJqbXYpltl/view?usp=sharing
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Thank You
+Lights Out
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Team
+Gaurav Jha
+Raj Shakya
+Vishwajeet Nand Yaduraj
