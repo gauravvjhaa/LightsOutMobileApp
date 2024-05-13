@@ -13,7 +13,9 @@ https://drive.google.com/file/d/1oRSq101-SXhbbnw2Wf9uBIAJqbXYpltl/view?usp=shari
 Thank You
 Lights Out
 
-# Team
+## Team Members
 Gaurav Jha
+
 Raj Shakya
+
 Vishwajeet Nand Yaduraj
