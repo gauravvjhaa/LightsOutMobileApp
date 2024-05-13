@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "lightsoutgauravjha",  // Replace this with your Firebase Hosting site ID
+    "public": "web",  // Specify your public directory (e.g., 'build/web' for Flutter web)
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
