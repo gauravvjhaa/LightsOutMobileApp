@@ -9,7 +9,7 @@ Detailed Project Report
 
 
 Link to Android APK (application still in development mode, your feedback will be appreciated)
-https://drive.google.com/file/d/1oRSq101-SXhbbnw2Wf9uBIAJqbXYpltl/view?usp=sharing
+[Click Here](https://drive.google.com/file/d/1YM51IuW0XlApPPuReoPeSdTvVPELh1uz/view?usp=drive_link)
 
 Link to iOS ABI 
 [To be released soon]
