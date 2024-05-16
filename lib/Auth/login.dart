@@ -227,11 +227,17 @@ class _PhoneHomeState extends State<PhoneHome> {
                       }),
                       const SizedBox(width: 25),
                       // apple button
-                      SquareTile(imagePath: 'assets/facebook.jpg', onTap: () async {
+                      SquareTile(imagePath: 'assets/apple.png', onTap: () async {
                         await DelayedExecution.executeWithDelay(context, 500, 'Hold On');
-                        //AuthService().signInWithGoogle();
-                        //AuthService().signInWithFacebook();
-                        //AuthService().signInWithGithub();
+                        Get.snackbar(
+                              'Under development',
+                              '- Team Lights Out',
+                              snackStyle: SnackStyle.FLOATING, // Using FLOATING style for better readability
+                              backgroundColor: Colors.brown[300],
+                              colorText: Colors.black,
+                              borderRadius: 12,
+                              duration: const Duration(seconds: 1),
+                            );
                       },)
                     ],
                   ),

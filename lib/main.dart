@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
     precacheImage(const AssetImage('assets/four.png'), context);
     precacheImage(const AssetImage('assets/five.png'), context);
     precacheImage(const AssetImage('assets/otp.png'), context);
-    precacheImage(const AssetImage('assets/facebook.jpg'), context);
+    precacheImage(const AssetImage('assets/apple.png'), context);
     precacheImage(const AssetImage('assets/google.png'), context);
     return GetMaterialApp(
       title: 'LightsOut',

@@ -35,6 +35,52 @@ class MathHelper {
     }
   }
 
+  static List<List<int>> findMinSumArrayFor9(
+      List<List<int>> array1,
+      List<List<int>> array2,
+      List<List<int>> array3,
+      List<List<int>> array4,
+      List<List<int>> array5,
+      List<List<int>> array6,
+      List<List<int>> array7,
+      List<List<int>> array8,
+      List<List<int>> array9
+      ) {
+    int sum1 = _calculateTotalOnes(array1);
+    int sum2 = _calculateTotalOnes(array2);
+    int sum3 = _calculateTotalOnes(array3);
+    int sum4 = _calculateTotalOnes(array4);
+    int sum5 = _calculateTotalOnes(array5);
+    int sum6 = _calculateTotalOnes(array6);
+    int sum7 = _calculateTotalOnes(array7);
+    int sum8 = _calculateTotalOnes(array8);
+    int sum9 = _calculateTotalOnes(array9);
+
+    print(array1);
+    print(array2);
+    print(array3);
+    print(array4);
+    print(array5);
+    print(array6);
+    print(array7);
+    print(array8);
+    print(array9);
+
+    List<int> sums = [sum1, sum2, sum3, sum4, sum5, sum6, sum7, sum8, sum9];
+    List<List<List<int>>> arrays = [
+      array1, array2, array3, array4, array5, array6, array7, array8, array9
+    ];
+
+    int minIndex = 0;
+    for (int i = 1; i < sums.length; i++) {
+      if (sums[i] < sums[minIndex]) {
+        minIndex = i;
+      }
+    }
+
+    return arrays[minIndex];
+  }
+
   static List<List<int>> findMinSumArray16(List<List<int>> array1, List<List<int>> array2, List<List<int>> array3, List<List<int>> array4,
       List<List<int>> array5, List<List<int>> array6, List<List<int>> array7, List<List<int>> array8,
       List<List<int>> array9, List<List<int>> array10, List<List<int>> array11, List<List<int>> array12,

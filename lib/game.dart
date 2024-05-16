@@ -399,19 +399,19 @@ class _GameState extends State<Game> {
 
   List<List<int>> processArrayForFiveAgain(List<List<int>> inputArray, modulo) {
     final v1 = [
-      [0, 1, 1, 1, 0],
-      [1, 0, 1, 0, 1],
-      [1, 1, 0, 1, 1],
-      [1, 0, 1, 0, 1],
-      [0, 1, 1, 1, 0],
+      [0,2,1,1,1],
+      [1,0,2,0,1],
+      [2,1,0,2,1],
+      [2,0,1,0,2],
+      [2,2,2,1,0],
     ];
 
     final v2 = [
-      [1, 0, 1, 0, 1],
-      [1, 0, 1, 0, 1],
+      [2,0,1,0,2],
+      [1,0,2,0,1],
       [0, 0, 0, 0, 0],
-      [1, 0, 1, 0, 1],
-      [1, 0, 1, 0, 1],
+      [2,0,1,0,2],
+      [1,0,2,0,1],
     ];
 
     List<List<int>> result01 =
@@ -450,7 +450,7 @@ class _GameState extends State<Game> {
         result01[i][j] = (inputArray[i][j] + v2[i][j]) % states;
         result02[i][j] = (inputArray[i][j] + (2*v2[i][j])) % states;
         result03[i][j] = (inputArray[i][j] + (3*v2[i][j])) % states;
-        result21[i][j] = (inputArray[i][j] + (2*v2[i][j]) + (1*v2[i][j])) % states;
+        result21[i][j] = (inputArray[i][j] + (2*v1[i][j]) + (1*v2[i][j])) % states;
         result22[i][j] = (inputArray[i][j] + (2*v1[i][j]) + (2*v2[i][j])) % states;
         result23[i][j] = (inputArray[i][j] + (2*v1[i][j]) + (3*v2[i][j])) % states;
         result30[i][j] = (inputArray[i][j] + (3*v1[i][j])) % states;
@@ -461,7 +461,7 @@ class _GameState extends State<Game> {
         result11[i][j] = (inputArray[i][j] + v1[i][j] + v2[i][j]) % states;
         result12[i][j] = (inputArray[i][j] + v1[i][j] + (2*v2[i][j])) % states;
         result13[i][j] = (inputArray[i][j] + v1[i][j] + (3*v2[i][j])) % states;
-        result20[i][j] = (inputArray[i][j] + (2*v2[i][j])) % states;
+        result20[i][j] = (inputArray[i][j] + (2*v1[i][j])) % states;
       }
     }
 
@@ -469,6 +469,58 @@ class _GameState extends State<Game> {
         result11, result12, result13, result20,
         result21, result22, result23, result30,
         result31, result32, result33, inputArray);
+  }
+
+  List<List<int>> processArrayFor3State5Dim(List<List<int>> inputArray, modulo) {
+    final v1 = [
+      [0,2,1,1,1],
+      [1,0,2,0,1],
+      [2,1,0,2,1],
+      [2,0,1,0,2],
+      [2,2,2,1,0],
+    ];
+
+    final v2 = [
+      [2,0,1,0,2],
+      [1,0,2,0,1],
+      [0,0,0,0,0],
+      [2,0,1,0,2],
+      [1,0,2,0,1],
+    ];
+
+    List<List<int>> result01 =
+    List.generate(dim, (index) => List<int>.filled(dim, 0));
+    List<List<int>> result02 =
+    List.generate(dim, (index) => List<int>.filled(dim, 0));
+    List<List<int>> result10 =
+    List.generate(dim, (index) => List<int>.filled(dim, 0));
+    List<List<int>> result11 =
+    List.generate(dim, (index) => List<int>.filled(dim, 0));
+    List<List<int>> result12 =
+    List.generate(dim, (index) => List<int>.filled(dim, 0));
+    List<List<int>> result20 =
+    List.generate(dim, (index) => List<int>.filled(dim, 0));
+    List<List<int>> result21 =
+    List.generate(dim, (index) => List<int>.filled(dim, 0));
+    List<List<int>> result22 =
+    List.generate(dim, (index) => List<int>.filled(dim, 0));
+
+    for (int i = 0; i < inputArray.length; i++) {
+      for (int j = 0; j < inputArray[i].length; j++) {
+        result01[i][j] = (inputArray[i][j] + v2[i][j]) % states;
+        result02[i][j] = (inputArray[i][j] + (2*v2[i][j])) % states;
+        result21[i][j] = (inputArray[i][j] + (2*v1[i][j]) + (1*v2[i][j])) % states;
+        result22[i][j] = (inputArray[i][j] + (2*v1[i][j]) + (2*v2[i][j])) % states;
+        result10[i][j] = (inputArray[i][j] + v1[i][j]) % states;
+        result11[i][j] = (inputArray[i][j] + v1[i][j] + v2[i][j]) % states;
+        result12[i][j] = (inputArray[i][j] + v1[i][j] + (2*v2[i][j])) % states;
+        result20[i][j] = (inputArray[i][j] + (2*v1[i][j])) % states;
+      }
+    }
+
+    return MathHelper.findMinSumArrayFor9(result01, result02, result10,
+        result11, result12, result20,
+        result21, result22, inputArray);
   }
 
   List<List<int>> processArrayForFive(List<List<int>> inputArray, modulo) {
@@ -702,9 +754,9 @@ class _GameState extends State<Game> {
         _toggleCount.isNotEmpty &&
         _toggleCount.length > x &&
         _toggleCount[x].length > y &&
-        states == 2 &&
-        dim == 4)){
-      minSumArray = processArrayForFour(_toggleCount, 2);
+        states == 3 &&
+        dim == 5)){
+      minSumArray = processArrayFor3State5Dim(_toggleCount, 3);
       //_minimumMovesNeeded = _calculateTotalOnes(minSumArray);
       numberText =
       minSumArray[x][y] == 0 ? '0' : '${states - minSumArray[x][y]}';
@@ -1083,7 +1135,7 @@ class _GameState extends State<Game> {
                             onPressed: () {
                               setState(() {
                                 viewedSolution = true;
-                                if (_showingSolution == false){
+                                if (_showingSolution == false && allowSound == true){
                                   playerAudio.play(AssetSource('weak.mp3'));
                                 }
                                 _showingSolution = !_showingSolution;

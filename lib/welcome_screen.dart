@@ -40,7 +40,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   }
 
   Future<void> _launchUrl() async {
-    const String url = 'https://www.wikihow.com/Solve-Lights-Out-Game';
+    const String url = 'https://lightsout-w861.onrender.com/rules';
     Uri uri = Uri.parse(url); // Convert the string URL to a Uri object
     if (!await launchUrl(uri, mode: LaunchMode.inAppBrowserView)) {
       throw Exception('Could not launch $uri');
