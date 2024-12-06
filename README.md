@@ -1,16 +1,18 @@
-# lights_out
+# Welcome to Lights Out
 
-A new Flutter project.
+"Lights Out" is a simple puzzle game. The game board has a grid of lights, some on and some off. When you press any light, it toggles (changes) its state and the state of the lights directly next to it (up, down, left, right). The goal is to turn off all the lights.
+
+
+APP SCREENSHOTS & more here
+[SemLongProjectPoster.pdf](https://github.com/gauravvjhaa/LightsOutMobileApp/files/15334414/SLP_PosterFinal.pdf)
+
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+For Report: [Click Here!](https://github.com/gauravvjhaa/LightsOutMobileApp/files/15334378/SLP_ReportFinal.pdf)
 
-A few resources to get you started if this is your first Flutter project:
+For Android APK: [Click Here!](https://drive.google.com/file/d/1Eg6nBFZ18A3CEyTgCsgOoc4klqG616de/view?usp=sharing)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+For iOS IPA: [Click Here!](https://drive.google.com/file/d/1Eg6nBFZ18A3CEyTgCsgOoc4klqG616de/view?usp=sharing)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
