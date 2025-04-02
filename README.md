@@ -14,5 +14,3 @@ For Report: [Click Here!](https://github.com/gauravvjhaa/LightsOutMobileApp/file
 
 For Android APK: [Click Here!](https://drive.google.com/file/d/1Eg6nBFZ18A3CEyTgCsgOoc4klqG616de/view?usp=sharing)
 
-For iOS IPA: [Click Here!](https://drive.google.com/file/d/1Eg6nBFZ18A3CEyTgCsgOoc4klqG616de/view?usp=sharing)
-
