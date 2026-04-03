@@ -25,7 +25,6 @@ void main() async {
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
 }
 
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

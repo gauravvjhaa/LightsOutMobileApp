@@ -3,14 +3,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-import '../Wrapper.dart';
+import '../wrapper.dart';
 
 class AuthService {
-
   // Google Sign-In
   signInWithGoogle() async {
     try {
-      final GoogleSignInAccount? gUser = await GoogleSignIn(clientId: '552426309385-57pisu1h8m7o90td26ol3o8sn0oil1t0.apps.googleusercontent.com').signIn();
+      final GoogleSignInAccount? gUser = await GoogleSignIn(
+              clientId:
+                  '552426309385-57pisu1h8m7o90td26ol3o8sn0oil1t0.apps.googleusercontent.com')
+          .signIn();
       if (gUser == null) {
         // Handle sign-in cancellation
         print('Google sign-in canceled.');
@@ -23,13 +25,14 @@ class AuthService {
         idToken: gAuth.idToken,
       );
 
-      UserCredential result = await FirebaseAuth.instance.signInWithCredential(credential);
+      UserCredential result =
+          await FirebaseAuth.instance.signInWithCredential(credential);
       User? userDetails = result.user;
-
 
       if (userDetails != null) {
         // Check if user data needs initialization
-        bool userDataInitialized = await checkUserDataInitialized(userDetails.uid);
+        bool userDataInitialized =
+            await checkUserDataInitialized(userDetails.uid);
 
         if (!userDataInitialized) {
           // User data has never been initialized, proceed with initialization
@@ -40,7 +43,10 @@ class AuthService {
             "id": userDetails.uid,
           };
 
-          FirebaseFirestore.instance.collection("users").doc(userDetails.uid).set(userInfoMap);
+          FirebaseFirestore.instance
+              .collection("users")
+              .doc(userDetails.uid)
+              .set(userInfoMap);
 
           // Successful login
           print('User logged in: ${userDetails.displayName}');
@@ -65,11 +71,15 @@ class AuthService {
   // Helper function to check if user data has been initialized
   Future<bool> checkUserDataInitialized(String userId) async {
     try {
-      DocumentSnapshot docSnapshot = await FirebaseFirestore.instance.collection('users').doc(userId).get();
+      DocumentSnapshot docSnapshot = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(userId)
+          .get();
 
       if (docSnapshot.exists) {
         // Check if required fields exist in the user document
-        Map<String, dynamic>? userData = docSnapshot.data() as Map<String, dynamic>?;
+        Map<String, dynamic>? userData =
+            docSnapshot.data() as Map<String, dynamic>?;
 
         if (userData != null &&
             userData.containsKey('accuracyForDim3State2') &&
@@ -86,5 +96,4 @@ class AuthService {
       return false; // Assume data needs initialization if error occurs
     }
   }
-
 }

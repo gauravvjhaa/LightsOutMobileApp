@@ -1,4 +1,4 @@
-import 'package:LightsOut/Wrapper.dart';
+import 'wrapper.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -10,8 +10,8 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
       splash: Center(
-        child: Lottie.asset('assets/animations/Animation - 1715509525570.json')
-      ),
+          child:
+              Lottie.asset('assets/animations/Animation - 1715509525570.json')),
       nextScreen: const Wrapper(),
       backgroundColor: Colors.black,
       splashIconSize: 200,
